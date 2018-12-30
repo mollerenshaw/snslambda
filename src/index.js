@@ -1,6 +1,9 @@
-const aws = require('aws-sdk');
+// const aws = require('aws-sdk');
 
 function processRecord(record) {
+  const message = record.Sns.Message;
+  const subject = record.Sns.Subject;
+  console.log(`The SNS message about subject '${subject}' is "${message}".`);
   return Promise.resolve(record.Sns.Message);
 }
 
