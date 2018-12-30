@@ -7,9 +7,9 @@ describe('lambda', () => {
     // Arrange.
     const event = {
       Records: [
-        { id: 1 },
-        { id: 2 },
-        { id: 3 },
+        { Sns: { Message: 'The first one' } },
+        { Sns: { Message: 'The second one' } },
+        { Sns: { Message: 'The third one' } },
       ],
     };
 
@@ -19,5 +19,13 @@ describe('lambda', () => {
     // Assert.
     expect(results).toHaveLength(3);
     results.forEach(r => expect(r).toBeInstanceOf(Promise));
+
+    Promise.all(results)
+      .then((values) => {
+        expect(values).toBeInstanceOf(Array);
+        expect(values[0]).toEqual('The first one');
+        expect(values[1]).toEqual('The second one');
+        expect(values[2]).toEqual('The third one');
+      });
   });
 });
