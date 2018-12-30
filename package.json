@@ -6,7 +6,7 @@
   "scripts": {
     "zip": "zip -r snslambda.zip src/ node_modules/ package*",
     "lint": "eslint src/ test/",
-    "test": "jest --coverage"
+    "test": "jest --coverage --silent"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,15 @@
   },
   "dependencies": {
     "aws-sdk": "^2.382.0"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "statements": 100,
+        "lines": 100,
+        "branches": 100,
+        "functions": 100
+      }
+    }
   }
 }
