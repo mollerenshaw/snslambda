@@ -1,0 +1,19 @@
+
+---
+
+version: 0.2
+            
+phases:
+  pre_build:
+    commands:
+      - npm ci
+  build:
+    commands:
+      - npm run lint
+      - npm run test
+  post_build:
+    commands:
+      - npm run zip
+artifacts:
+  files:
+    - snslambda.zip
