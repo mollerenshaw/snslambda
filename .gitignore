@@ -1,4 +1,6 @@
 # NPM dependencies.
 node_modules/
 
+# Test output
+coverage/
 test-report.json
