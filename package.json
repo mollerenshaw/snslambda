@@ -1,0 +1,29 @@
+{
+  "name": "snslambda",
+  "version": "1.0.0",
+  "description": "A simple lambda that listens to an SNS topic, and writes messages to an S3 bucket.",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint src/ test/",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mollerenshaw/snslambda.git"
+  },
+  "author": "Mark Ollerenshaw <mollerenshaw@zepler.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mollerenshaw/snslambda/issues"
+  },
+  "homepage": "https://github.com/mollerenshaw/snslambda#readme",
+  "devDependencies": {
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.382.0"
+  }
+}
